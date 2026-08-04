@@ -1,8 +1,10 @@
 package com.japps.tasks.mapper.impl;
 
 import com.japps.tasks.domain.CreateTaskRequest;
+import com.japps.tasks.domain.UpdateTaskRequest;
 import com.japps.tasks.domain.dto.CreateTaskRequestDto;
 import com.japps.tasks.domain.dto.TaskDto;
+import com.japps.tasks.domain.dto.UpdateTaskRequestDto;
 import com.japps.tasks.domain.entities.Task;
 import com.japps.tasks.mapper.TaskMapper;
 import org.springframework.stereotype.Component;
@@ -16,6 +18,17 @@ public class TaskMapperImpl implements TaskMapper {
                 dto.description(),
                 dto.dueDate(),
                 dto.priority()
+        );
+    }
+
+    @Override
+    public UpdateTaskRequest fromDto(UpdateTaskRequestDto dto) {
+        return new UpdateTaskRequest(
+                dto.title(),
+                dto.description(),
+                dto.dueDate(),
+                dto.priority(),
+                dto.status()
         );
     }
 
