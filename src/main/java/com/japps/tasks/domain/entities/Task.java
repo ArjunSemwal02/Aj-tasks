@@ -1,6 +1,7 @@
 package com.japps.tasks.domain.entities;
 
 import ch.qos.logback.core.status.InfoStatus;
+import com.japps.user.domain.entities.User;
 import jakarta.persistence.*;
 
 import java.time.Instant;
@@ -13,7 +14,8 @@ import java.util.UUID;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id", updatable = false, nullable = false)
+//    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "id")
     private UUID id;
 
     @Column(name = "title", nullable = false)
@@ -37,10 +39,16 @@ public class Task {
     @Column(name = "updated", nullable = false)
     private Instant updated;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+
+
     public Task() {
     }
 
-    public Task(UUID id, String title, String description, LocalDateTime dueDate, TaskStatus status, TaskPriority priority, Instant created, Instant updated) {
+    public Task(UUID id, String title, String description, LocalDateTime dueDate, TaskStatus status, TaskPriority priority, Instant created, Instant updated, User user) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -49,6 +57,7 @@ public class Task {
         this.priority = priority;
         this.created = created;
         this.updated = updated;
+        this.user = user;
     }
 
     public UUID getId() {
@@ -115,6 +124,14 @@ public class Task {
         this.updated = updated;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -133,6 +150,7 @@ public class Task {
                 ", priority=" + priority +
                 ", created=" + created +
                 ", updated=" + updated +
+                ", user=" + user +
                 '}';
     }
 

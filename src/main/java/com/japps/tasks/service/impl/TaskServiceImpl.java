@@ -35,7 +35,8 @@ public class TaskServiceImpl implements TaskService {
                 TaskStatus.OPEN,
                 request.priority(),
                 now,
-                now
+                now,
+                null
         );
 
         return taskRepository.save(task);
