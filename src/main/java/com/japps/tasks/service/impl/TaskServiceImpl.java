@@ -5,7 +5,7 @@ import com.japps.tasks.domain.UpdateTaskRequest;
 import com.japps.tasks.domain.entities.Task;
 import com.japps.tasks.domain.entities.TaskStatus;
 import com.japps.tasks.exception.TaskNotFoundException;
-import com.japps.tasks.repository.TaskRepository;
+import com.japps.tasks.repositories.TaskRepository;
 import com.japps.tasks.service.TaskService;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,5 @@
 package com.japps.tasks.domain.entities;
 
-import ch.qos.logback.core.status.InfoStatus;
-import com.japps.user.domain.entities.User;
 import jakarta.persistence.*;
 
 import java.time.Instant;

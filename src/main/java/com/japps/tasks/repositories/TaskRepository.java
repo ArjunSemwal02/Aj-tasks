@@ -1,4 +1,4 @@
-package com.japps.tasks.repository;
+package com.japps.tasks.repositories;
 
 import com.japps.tasks.domain.entities.Task;
 import org.springframework.data.jpa.repository.JpaRepository;

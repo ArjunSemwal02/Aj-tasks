@@ -1,4 +1,4 @@
-package com.japps.security;
+package com.japps.tasks.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

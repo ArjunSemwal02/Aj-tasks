@@ -1,4 +1,4 @@
-package com.japps.user.domain.entities;
+package com.japps.tasks.domain.entities;
 
 public enum Role {
     USER,

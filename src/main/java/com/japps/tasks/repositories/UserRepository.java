@@ -1,6 +1,6 @@
-package com.japps.user.repository;
+package com.japps.tasks.repositories;
 
-import com.japps.user.domain.entities.User;
+import com.japps.tasks.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
