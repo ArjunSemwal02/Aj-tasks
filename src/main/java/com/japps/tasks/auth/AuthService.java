@@ -1,6 +1,5 @@
-package com.japps.tasks.auth.authService;
+package com.japps.tasks.auth;
 
-import com.japps.tasks.auth.dto.RegisterRequest;
 import com.japps.tasks.domain.entities.Role;
 import com.japps.tasks.domain.entities.User;
 import com.japps.tasks.repositories.UserRepository;
@@ -21,7 +20,7 @@ public class AuthService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void register(RegisterRequest request) {
+    public void register(RegisterRequestDto request) {
 
         if (userRepository.existsByEmail(request.email())) {
             throw new IllegalArgumentException("Email already registered");
